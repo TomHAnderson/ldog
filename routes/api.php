@@ -3,7 +3,6 @@
 declare(strict_types=1);
 
 use App\Http\Controllers\GraphQLController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +17,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::post('/', GraphQLController::class)
-    ->name('graphql');
-
-Route::get('/', GraphQLController::class)
     ->name('graphql');

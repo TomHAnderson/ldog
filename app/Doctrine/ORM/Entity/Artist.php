@@ -2,12 +2,17 @@
 
 declare(strict_types=1);
 
-namespace App\DoctrineORM\Entity;
+namespace App\Doctrine\ORM\Entity;
 
+use ApiSkeletons\Doctrine\ORM\GraphQL\Attribute as GraphQL;
+
+#[GraphQL\Entity]
 class Artist
 {
+    #[GraphQL\Field]
     private int $id;
 
+    #[GraphQL\Field]
     private string $name;
 
     public function getId(): int

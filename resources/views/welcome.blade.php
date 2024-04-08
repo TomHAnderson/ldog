@@ -1,1 +1,1 @@
-Welcome to Laravel, Doctrine, and GraphQL.
+Welcome to Laravel, Doctrine ORM, and GraphQL.
