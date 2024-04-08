@@ -18,6 +18,7 @@
 
     <exclude-pattern>bootstrap/cache/*</exclude-pattern>
     <exclude-pattern>public/index.php</exclude-pattern>
+    <exclude-pattern>storage/*</exclude-pattern>
 
     <!-- Include full Doctrine Coding Standard -->
     <rule ref="Doctrine">
