@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<skipper version="3.3.7.1828" mvc="Without MVC" orm="Doctrine2" name="Laravel, Doctrine, and GraphQL" uuid="0da288aa-df49-4ae4-8cd2-75832a5e5a7c">
+  <module name="\MainBundle" local-name="MainBundle" namespace="\Doctrine\Entity" local-namespace="Doctrine\Entity" export-format="Doctrine2Xml" export-path="config/doctrine-metadata" uuid="a376ef4b-e12d-4fbc-806d-47fcbf8b31b4">
+    <entity name="\Doctrine\Entity\Artist" local-name="Artist" namespace="\Doctrine\Entity" uuid="98d56afb-0854-4fe6-9875-dcb391c7b318">
+      <field name="id" type="integer" required="true" unique="true" primary="true" auto-increment="true" uuid="892a976c-e786-462a-8f91-b1af8456380c"/>
+      <field name="name" type="string" size="255" uuid="79f8f14b-ee27-4459-82a7-32952bca4955"/>
+    </entity>
+  </module>
+  <visual-data>
+    <entity uuid="98d56afb-0854-4fe6-9875-dcb391c7b318" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="10" position-y="20"/>
+    <module uuid="a376ef4b-e12d-4fbc-806d-47fcbf8b31b4" bg-color="#E7F5FD" position-x="61" position-y="72" size-x="11" size-x2="217" size-y="22" size-y2="163"/>
+    <project uuid="0da288aa-df49-4ae4-8cd2-75832a5e5a7c" size-x="0" size-x2="328" size-y="0" size-y2="285"/>
+  </visual-data>
+</skipper>
