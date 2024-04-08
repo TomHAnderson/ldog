@@ -53,7 +53,7 @@ RUN php composer-setup.php
 RUN php -r "unlink('composer-setup.php');"
 RUN mv composer.phar /bin/composer
 
-# Magidoc
+# Node and Magidoc
 RUN npm install -g pnpm
 RUN SHELL=/bin/bash pnpm setup
 RUN SHELL=/bin/bash PNPM_HOME=/usr/bin pnpm add --global @magidoc/cli@latest

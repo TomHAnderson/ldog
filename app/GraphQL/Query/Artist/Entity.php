@@ -22,9 +22,9 @@ class Entity implements Field
                 'id' => Type::int(),
             ],
             'resolve' => function($source, array $args, $context, ResolveInfo $info) use ($driver) {
-                $entityManager = $driver->get(EntityManager::class);
-
-                return $entityManager->getRepository(Artist::class)->find($args['id']);
+                return $driver->get(EntityManager::class)
+                    ->getRepository(Artist::class)
+                    ->find($args['id']);
             },
             'description' => <<<EOF
 Fetch a single artist.

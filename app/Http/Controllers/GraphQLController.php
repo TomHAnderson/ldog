@@ -10,6 +10,8 @@ use App\GraphQL\Mutation;
 use App\GraphQL\Query;
 use Doctrine\Laminas\Hydrator\DoctrineObject;
 use Doctrine\ORM\EntityManager;
+use GraphQL\Error\Error;
+use GraphQL\Error\FormattedError;
 use GraphQL\GraphQL;
 use GraphQL\Type\Definition\ObjectType;
 use GraphQL\Type\Schema;
@@ -25,6 +27,8 @@ class GraphQLController extends Controller
         $query = $request->json('query');
         $variables = $request->json('variables') ?? [];
         $operationName = $request->json('operationName');
+
+        $context = [];
 
         $driver = new Driver($entityManager, new Config([
             'entityPrefix' => 'App\\Doctrine\\Entity\\',
@@ -57,12 +61,25 @@ class GraphQLController extends Controller
         // Limit query complexity
         DocumentValidator::addRule(new QueryComplexity(350));
 
+        // Execute
         $result = GraphQL::executeQuery(
             schema: $schema,
-            source: $query,
+            source: (string) $query,
+            contextValue: $context,
             variableValues: $variables,
             operationName: $operationName,
-        );
+        )
+            ->setErrorFormatter(static function (Error $error): array {
+                $exception = $error->getPrevious() ?: $error;
+
+                // Local development
+                if (config('app.debug')) {
+                    throw $exception;
+                }
+
+                return FormattedError::createFromException($error);
+            })
+            ->setErrorsHandler(static fn (array $errors, callable $formatter): array => array_map($formatter, $errors));
 
         return $result->toArray();
     }

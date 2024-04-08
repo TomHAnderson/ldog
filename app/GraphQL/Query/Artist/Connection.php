@@ -20,7 +20,7 @@ class Connection implements Field
             ],
             'resolve' => $driver->resolve(Artist::class),
             'description' => <<<EOF
-Fetch artists
+Fetch artists.
 EOF,
         ];
     }

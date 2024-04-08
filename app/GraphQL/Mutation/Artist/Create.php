@@ -19,7 +19,7 @@ class Create implements Field
         return [
             'type' => $driver->type(Artist::class),
             'args' => [
-                'values' => $driver->input(Artist::class, ['name']),
+                'values' => $driver->input(Artist::class, ['name'], []),
             ],
             'resolve' => function($source, array $args, $context, ResolveInfo $info) use ($driver) {
                 $artist = new Artist();
@@ -31,7 +31,7 @@ class Create implements Field
                 return $artist;
             },
             'description' => <<<EOF
-Fetch a single artist.
+Create an artist.
 EOF,
         ];
     }
