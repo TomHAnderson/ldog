@@ -52,6 +52,21 @@ composer create-project api-skeletons/laravel-doctrine-orm-graphql
                     `
                 },
                 {
+                    title: 'Getting Started',
+                    content: `
+Getting Started
+===============
+
+* Copy \`.env.dist\` to \`.env\`
+* Run \`docker-compose up -d\`
+* Connect to the docker instance by running \`docker ps\` to get the instance id,
+  then \`docker exec -it {instanceId} bash\`
+* Run \`composer install\`
+* Create the database with \`php artisan doctrine:schema:create\`
+* Generate the GraphQL documentation with \`magidoc generate\`
+                    `
+                },
+                {
                     title: 'Doctrine ERD with Skipper',
                     content: `
 Doctrine ERD with Skipper
@@ -131,6 +146,44 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+\`\`\`
+                    `
+                }, {
+                    title: 'Example Query',
+                    content: `
+Example Query
+=============
+
+This query returns all Artists, Performances, and Recordings in the included sample database.
+
+\`\`\`graphql
+query {
+  artists {
+    edges {
+      node {
+        id
+        name
+        performances {
+          edges {
+            node {
+              date
+              venue
+              city
+              state
+              recordings {
+                edges {
+                  node {
+                    source
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 \`\`\`
                     `
                 }
