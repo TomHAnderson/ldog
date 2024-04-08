@@ -27,6 +27,8 @@ RUN apt-get install --yes libxml2-dev
 RUN apt-get install --yes default-mysql-client
 RUN apt-get install --yes procps
 RUN apt-get install --yes redis
+RUN apt-get install --yes nodejs
+RUN apt-get install --yes npm
 
 # PHP
 RUN docker-php-ext-install pdo_mysql mysqli gd zip xml soap
@@ -50,6 +52,11 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 RUN php composer-setup.php
 RUN php -r "unlink('composer-setup.php');"
 RUN mv composer.phar /bin/composer
+
+# Magidoc
+RUN npm install -g pnpm
+RUN SHELL=/bin/bash pnpm setup
+RUN SHELL=/bin/bash PNPM_HOME=/usr/bin pnpm add --global @magidoc/cli@latest
 
 # Copy app files
 WORKDIR /var/www
