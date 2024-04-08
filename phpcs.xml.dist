@@ -16,6 +16,8 @@
     <file>routes</file>
     <file>tests</file>
 
+    <exclude-pattern>bootstrap/cache/*</exclude-pattern>
+
     <!-- Include full Doctrine Coding Standard -->
     <rule ref="Doctrine">
     </rule>
