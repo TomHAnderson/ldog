@@ -11,7 +11,7 @@ class ArtistTest extends TestCase
      *
      * @return void
      */
-    public function testConnection()
+    public function testArtistsConnection()
     {
         $response = $this->postJson('/', [
             'query' => '{

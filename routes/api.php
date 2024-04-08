@@ -17,9 +17,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', static function (Request $request) {
-    return $request->user();
-});
-
 Route::post('/', GraphQLController::class)
+    ->name('graphql');
+
+Route::get('/', GraphQLController::class)
     ->name('graphql');

@@ -34,7 +34,7 @@ return [
             'dev'           => env('APP_DEBUG', false),
             'connection'    => env('DB_CONNECTION', 'mysql'),
             'meta'          => env('DOCTRINE_METADATA', 'xml'),
-            'paths'         => [__DIR__ . '/doctrine-metadata'],
+            'paths'         => [__DIR__ . '/doctrine-orm-metadata'],
             'naming_strategy' => DefaultNamingStrategy::class,
             'repository'    => EntityRepository::class,
 
