@@ -1,5 +1,5 @@
 {
-    "name": "api-skeletongs/laravel-doctrine-orm-graphql",
+    "name": "api-skeletons/laravel-doctrine-orm-graphql",
     "type": "project",
     "description": "Laravel with Doctrine and GraphQL",
     "keywords": ["framework", "laravel", "doctrine", "graphql"],
