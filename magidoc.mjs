@@ -29,21 +29,20 @@ export default {
     "
 />
 
-Laravel, Doctrine ORM, and GraphQL
-==================================
+Laravel, Doctrine ORM, and GraphQL Stack
+========================================
 
-This is a template application for building GraphQL applications in Laravel
-with Doctrine ORM.  Abbreviated \`ldog\`.
+This is a template application for building GraphQL applications in 
+Laravel with Doctrine ORM.  **Known as the "ldog" stack.**
 
 Source code available at https://github.com/api-skeletons/ldog
 
+You may try it out with [graphiql](https://ldog.apiskeletons.dev/graphiql)
+or POST to this server's GraphQL endpoint at https://ldog.apisketons.dev
+
 Brought to you by [API Skeletons](mailto:contact@apiskeletons.com)
 
-<img
-    src="http://localhost/erd.png"
-    title="ERD"
-    alt="ERD"
-/>
+
                     `
                 },
                 {
@@ -54,7 +53,7 @@ Install
 
 To create a new project run
 \`\`\`
-composer create-project api-skeletons/laravel-doctrine-orm-graphql
+composer create-project api-skeletons/ldog
 \`\`\`
                     `
                 },
@@ -64,7 +63,7 @@ composer create-project api-skeletons/laravel-doctrine-orm-graphql
 Getting Started
 ===============
 
-* Copy \`.env.dist\` to \`.env\`
+* Copy \`.env.example\` to \`.env\`
 * Run \`docker-compose up -d\`
 * Connect to the docker instance by running \`docker ps\` to get the instance id,
   then \`docker exec -it {instanceId} bash\`
@@ -83,6 +82,14 @@ Included is an ERD you can use to extend your project's database.  The ERD is cr
 Find it at \`~/ldog.skipper\`.  The export path is set to \`~/config/doctrine-orm-metadata\`.
 
 This an an immensely powerful tool and every Doctrine ORM project should use it.
+
+This is the ERD for the entities used in developing the stack.
+
+<img
+    src="http://localhost/erd.png"
+    title="ERD"
+    alt="ERD"
+/>
                     `
                 },
                 {
@@ -162,6 +169,8 @@ Example Query
 =============
 
 This query returns all Artists, Performances, and Recordings in the included sample database.
+
+You may try it out with [graphiql](https://ldog.apiskeletons.dev/graphiql)
 
 \`\`\`graphql
 query {
