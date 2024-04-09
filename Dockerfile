@@ -75,8 +75,8 @@ RUN composer install --no-dev
 RUN touch /var/www/storage/logs/laravel.log && \
   rm /var/www/storage/logs/laravel.log && \
   touch /var/www/storage/logs/laravel.log
-RUN chgrp -R www-data storage bootstrap/cache
-RUN chmod -R ug+rwx storage bootstrap/cache
+RUN chgrp -R www-data storage bootstrap/cache database/database.sqlite
+RUN chmod -R ug+rwx storage bootstrap/cache database/database.sqlite
 
 # Expose port
 EXPOSE 8080
