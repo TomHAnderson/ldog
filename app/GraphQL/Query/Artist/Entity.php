@@ -26,7 +26,7 @@ class Entity implements Field
         return [
             'type' => $driver->type(Artist::class),
             'args' => [
-                'id' => Type::int(),
+                'id' => Type::nonNull(Type::int()),
             ],
             'resolve' => static function ($source, array $args, $context, ResolveInfo $info) use ($driver) {
                 return $driver->get(EntityManager::class)
