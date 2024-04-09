@@ -30,8 +30,14 @@ RUN apt-get install --yes redis
 RUN apt-get install --yes nodejs
 RUN apt-get install --yes npm
 
+# Environment
+ENV PHP_OPCACHE_VALIDATE_TIMESTAMPS="0" \
+    PHP_OPCACHE_MAX_ACCELERATED_FILES="10000" \
+    PHP_OPCACHE_MEMORY_CONSUMPTION="192" \
+    PHP_OPCACHE_MAX_WASTED_PERCENTAGE="10"
+ 
 # PHP
-RUN docker-php-ext-install pdo_mysql mysqli gd zip xml soap
+RUN docker-php-ext-install pdo_mysql mysqli gd zip xml soap opcache
 RUN apt-get update && apt-get install -y zlib1g-dev libicu-dev g++
 RUN docker-php-ext-configure intl
 RUN docker-php-ext-install intl
@@ -40,6 +46,7 @@ RUN docker-php-ext-enable redis
 RUN pecl install xdebug
 RUN docker-php-ext-enable xdebug
 COPY .docker/php.ini /usr/local/etc/php/php.ini
+COPY .docker/opcache.ini /usr/local/etc/php/conf.d/opcache.ini
 
 # Apache
 RUN ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rewrite.load

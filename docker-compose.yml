@@ -10,6 +10,8 @@ services:
             - .:/var/www
         networks:
             - default
+        environment:
+            PHP_OPCACHE_VALIDATE_TIMESTAMPS: 1
         depends_on:
             - mysql
     mysql:
