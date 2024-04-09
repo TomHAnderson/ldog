@@ -4,7 +4,7 @@
     <id name="id" type="bigint">
       <generator strategy="AUTO"/>
     </id>
-    <field name="name" type="string" nullable="false"/>
+    <field name="name" type="string" unique="true" nullable="false"/>
     <one-to-many field="performances" target-entity="App\Doctrine\ORM\Entity\Performance" mapped-by="artist"/>
   </entity>
 </doctrine-mapping>

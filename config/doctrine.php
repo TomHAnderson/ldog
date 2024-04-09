@@ -121,7 +121,9 @@ return [
     | Create a custom or override a Doctrine Type
     |--------------------------------------------------------------------------
     */
-    'custom_types'               => [],
+    'custom_types'               => [
+        \Ramsey\Uuid\Doctrine\UuidType::NAME => \Ramsey\Uuid\Doctrine\UuidType::class,
+    ],
     /*
     |--------------------------------------------------------------------------
     | DQL custom datetime functions
