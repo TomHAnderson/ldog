@@ -8,8 +8,8 @@ export default {
         output: './public/docs',
         options: {
             siteRoot: `/docs`,
-            appTitle: 'Laravel, Doctrine, and GraphQL',
-            appLogo: 'http://localhost/laravel-doctrine-orm-graphql.svg',
+            appTitle: 'Laravel, Doctrine ORM, and GraphQL',
+            appLogo: 'http://localhost/ldog.svg',
 	    appFavicon: 'https://apiskeletons.com/images/favicon.ico',
             pages: [
                 {
@@ -17,7 +17,7 @@ export default {
                     content: `
 
 <img
-    src="http://localhost/laravel-doctrine-orm-graphql.svg"
+    src="http://localhost/ldog.svg"
     title="Laravel, Doctrine ORM, and GraphQL"
     alt="Laravel, Doctrine ORM, and GraphQL"
     width="600px"
@@ -29,8 +29,8 @@ export default {
     "
 />
 
-Laravel, Doctrine ORM, and GraphQL Documentation
-============================================
+Laravel, Doctrine ORM, and GraphQL
+==================================
 
 This is a template application for building GraphQL applications in Laravel
 with Doctrine ORM.  Abbreviated \`ldog\`.
