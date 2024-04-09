@@ -8,7 +8,7 @@ export default {
         output: './public/docs',
         options: {
             siteRoot: `/docs`,
-            appTitle: 'Laravel, Doctrine ORM, and GraphQL',
+            appTitle: 'ldog Stack',
             appLogo: 'https://raw.githubusercontent.com/API-Skeletons/ldog/main/public/ldog.svg',
 	    appFavicon: 'https://apiskeletons.com/images/favicon.ico',
             pages: [
@@ -29,32 +29,32 @@ export default {
     "
 />
 
-Laravel, Doctrine ORM, and GraphQL Stack
-========================================
+ldog Stack
+==========
+
+Laravel, Doctrine ORM, and GraphQL
+----------------------------------
 
 This is a template application for building GraphQL applications in 
-Laravel with Doctrine ORM.  **Known as the "ldog" stack.**
-
-Source code available at https://github.com/api-skeletons/ldog
-
-You may try it out with [graphiql](https://ldog.apiskeletons.dev/graphiql)
-or POST to this server's GraphQL endpoint at https://ldog.apisketons.dev
-
-Brought to you by [API Skeletons](mailto:contact@apiskeletons.com)
-
-
-                    `
-                },
-                {
-                    title: 'Install',
-                    content: `
-Install
-=======
+Laravel with Doctrine ORM.  **Known as the ldog Stack.**
 
 To create a new project run
 \`\`\`
 composer create-project api-skeletons/ldog
 \`\`\`
+
+Source code available at https://github.com/api-skeletons/ldog
+
+This site is an exact copy of the ldog project.  It includes an example
+Doctrine ORM schema and database served as GraphQL.
+
+You may explore the GraphQL with [graphiql](https://ldog.apiskeletons.dev/graphiql)
+or POST to this server's GraphQL endpoint at https://ldog.apisketons.dev
+
+---
+
+A project of [API Skeletons](mailto:contact@apiskeletons.com)
+* https://github.com/api-skeletons/ldog
                     `
                 },
                 {
@@ -63,13 +63,18 @@ composer create-project api-skeletons/ldog
 Getting Started
 ===============
 
-* Copy \`.env.example\` to \`.env\`
+* Copy \`.env.example\` or \`.env.dev\` to \`.env\`
 * Run \`docker-compose up -d\`
 * Connect to the docker instance by running \`docker ps\` to get the instance id,
   then \`docker exec -it {instanceId} bash\`
 * Run \`composer install\`
 * Create the database with \`php artisan doctrine:schema:create\`
 * Generate the GraphQL documentation with \`magidoc generate\`
+
+---
+
+A project of [API Skeletons](mailto:contact@apiskeletons.com)
+* https://github.com/api-skeletons/ldog
                     `
                 },
                 {
@@ -90,6 +95,11 @@ This is the ERD for the entities used in developing the stack.
     title="ERD"
     alt="ERD"
 />
+
+---
+
+A project of [API Skeletons](mailto:contact@apiskeletons.com)
+* https://github.com/api-skeletons/ldog
                     `
                 },
                 {
@@ -102,6 +112,11 @@ GraphQL documentation is created with \`magidoc\`.  Inside the container and fro
 \`/var/www\`, run \`magidoc generate\` to create the documentation.
 
 Configuration is done via the \`~/magidoc.mjs\` file.
+
+---
+
+A project of [API Skeletons](mailto:contact@apiskeletons.com)
+* https://github.com/api-skeletons/ldog
                     `
                 },
                 {
@@ -116,6 +131,11 @@ To ensure code quality, run \`composer test\` to run the following:
 * [Doctrine Coding Standard](https://www.doctrine-project.org/projects/doctrine-coding-standard/en/11.0/reference/index.html)
 * [Psalm](https://psalm.dev/docs/)
 * [PHPUnit](https://docs.phpunit.de/en/10.5/)
+
+---
+
+A project of [API Skeletons](mailto:contact@apiskeletons.com)
+* https://github.com/api-skeletons/ldog
                     `
                 },
                 {
@@ -132,6 +152,11 @@ Help Resources
 * GraphQL Type Driver for Doctrine ORM - https://doctrine-orm-graphql.apiskeletons.dev/en/latest/
 * Skipper - https://www.skipper18.com/help/
 * magidoc - https://magidoc.js.org/introduction/welcome
+
+---
+
+A project of [API Skeletons](mailto:contact@apiskeletons.com)
+* https://github.com/api-skeletons/ldog
                     `
                 },
                 {
@@ -201,6 +226,11 @@ query {
   }
 }
 \`\`\`
+
+---
+
+A project of [API Skeletons](mailto:contact@apiskeletons.com)
+* https://github.com/api-skeletons/ldog
                     `
                 }
             ]
