@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\Mapping\DefaultNamingStrategy;
+use Ramsey\Uuid\Doctrine\UuidType;
 
 return [
 
@@ -122,7 +123,7 @@ return [
     |--------------------------------------------------------------------------
     */
     'custom_types'               => [
-        \Ramsey\Uuid\Doctrine\UuidType::NAME => \Ramsey\Uuid\Doctrine\UuidType::class,
+        UuidType::NAME => UuidType::class,
     ],
     /*
     |--------------------------------------------------------------------------
