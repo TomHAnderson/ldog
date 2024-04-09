@@ -35,7 +35,9 @@ Laravel, Doctrine ORM, and GraphQL
 This is a template application for building GraphQL applications in Laravel
 with Doctrine ORM.  Abbreviated \`ldog\`.
 
-Brought to you by API Skeletons <contact@apiskeletons.com>
+Source code available at https://github.com/api-skeletons/ldog
+
+Brought to you by [API Skeletons](mailto:contact@apiskeletons.com)
 
 <img
     src="http://localhost/erd.png"
