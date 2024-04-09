@@ -9,7 +9,7 @@ export default {
         options: {
             siteRoot: `/docs`,
             appTitle: 'Laravel, Doctrine ORM, and GraphQL',
-            appLogo: 'http://localhost/ldog.svg',
+            appLogo: 'https://raw.githubusercontent.com/API-Skeletons/ldog/main/public/ldog.svg',
 	    appFavicon: 'https://apiskeletons.com/images/favicon.ico',
             pages: [
                 {
@@ -17,7 +17,7 @@ export default {
                     content: `
 
 <img
-    src="http://localhost/ldog.svg"
+    src="https://raw.githubusercontent.com/API-Skeletons/ldog/main/public/ldog.svg"
     title="Laravel, Doctrine ORM, and GraphQL"
     alt="Laravel, Doctrine ORM, and GraphQL"
     width="600px"
@@ -86,7 +86,7 @@ This an an immensely powerful tool and every Doctrine ORM project should use it.
 This is the ERD for the entities used in developing the stack.
 
 <img
-    src="http://localhost/erd.png"
+    src="https://raw.githubusercontent.com/API-Skeletons/ldog/main/public/erd.png"
     title="ERD"
     alt="ERD"
 />
