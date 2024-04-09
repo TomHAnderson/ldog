@@ -3,7 +3,7 @@ name: ldog
 on: [push, pull_request]
 jobs:
   laravel:
-    name: Laravel (PHP ${{ matrix.php-versions }})
+    name: ldog (PHP ${{ matrix.php-versions }})
     runs-on: ubuntu-latest
     env:
       DB_DATABASE: laravel
