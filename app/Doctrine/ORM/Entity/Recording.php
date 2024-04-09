@@ -101,6 +101,8 @@ class Recording
 
     /**
      * Get users.
+     *
+     * @return mixed[]
      */
     public function getUsers(): Collection
     {
