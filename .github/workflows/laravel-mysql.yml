@@ -70,7 +70,7 @@ jobs:
 
       - name: Prepare the application
         run: |
-          php -r "file_exists('.env') || copy('.env.dist ', '.env');"
+          php -r "file_exists('.env') || copy('.env.dist', '.env');"
           php artisan key:generate
 
       - name: Clear Config
@@ -82,7 +82,7 @@ jobs:
           DB_PORT: ${{ job.services.mysql.ports['3306'] }}
           REDIS_PORT: ${{ job.services.redis.ports['6379'] }}
 
-      - name: Test 
+      - name: Test
         run: composer test
         env:
           DB_PORT: ${{ job.services.mysql.ports['3306'] }}
