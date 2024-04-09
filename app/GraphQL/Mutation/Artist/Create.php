@@ -9,7 +9,9 @@ use App\Doctrine\ORM\Entity\Artist;
 use App\GraphQL\Field;
 use Doctrine\Laminas\Hydrator\DoctrineObject;
 use Doctrine\ORM\EntityManager;
+use GraphQL\Error\Error;
 use GraphQL\Type\Definition\ResolveInfo;
+use Throwable;
 
 class Create implements Field
 {
@@ -33,7 +35,12 @@ class Create implements Field
 
                 $driver->get(DoctrineObject::class)->hydrate($args['values'], $artist);
                 $driver->get(EntityManager::class)->persist($artist);
-                $driver->get(EntityManager::class)->flush();
+
+                try {
+                    $driver->get(EntityManager::class)->flush();
+                } catch (Throwable $e) {
+                    throw new Error($e->getMessage());
+                }
 
                 return $artist;
             },
