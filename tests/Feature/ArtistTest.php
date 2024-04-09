@@ -1,17 +1,19 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tests\Feature;
 
 use Tests\TestCase;
+
+use function count;
 
 class ArtistTest extends TestCase
 {
     /**
      * A basic test example.
-     *
-     * @return void
      */
-    public function testArtistsConnection()
+    public function testArtistsConnection(): void
     {
         // Create a new artist
         $response = $this->postJson('/', [
@@ -25,9 +27,7 @@ class ArtistTest extends TestCase
             }',
             'variables' => [],
             'operationName' => null,
-        ], [
-            'Content-Type' => 'application/json',
-        ]);
+        ], ['Content-Type' => 'application/json']);
 
         $response->assertStatus(200);
 
@@ -49,9 +49,7 @@ class ArtistTest extends TestCase
             }',
             'variables' => [],
             'operationName' => null,
-        ], [
-            'Content-Type' => 'application/json',
-        ]);
+        ], ['Content-Type' => 'application/json']);
 
         $response->assertStatus(200);
 
@@ -69,9 +67,7 @@ class ArtistTest extends TestCase
             }',
             'variables' => [],
             'operationName' => null,
-        ], [
-            'Content-Type' => 'application/json',
-        ]);
+        ], ['Content-Type' => 'application/json']);
 
         $response->assertStatus(200);
 

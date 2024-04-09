@@ -15,6 +15,7 @@ abstract class TestCase extends BaseTestCase
     public function setUp(): void
     {
         $this->createApplication();
+
         parent::setUp();
 
         // Create the database schema

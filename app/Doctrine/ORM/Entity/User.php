@@ -6,7 +6,6 @@ namespace App\Doctrine\ORM\Entity;
 
 use ApiSkeletons\Doctrine\ORM\GraphQL\Attribute as GraphQL;
 use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 
 /**
  * User
@@ -26,9 +25,8 @@ class User
     #[GraphQL\Field(description: 'Primary key')]
     private int $id;
 
-    /** @var Collection<id, Recording> */
     #[GraphQL\Association(description: 'Recordings')]
-    private Collection $recordings;
+    private ArrayCollection $recordings;
 
     /**
      * Constructor
@@ -122,10 +120,8 @@ class User
 
     /**
      * Get recordings.
-     *
-     * @return Collection<id, Recording>
      */
-    public function getRecordings(): Collection
+    public function getRecordings(): ArrayCollection
     {
         return $this->recordings;
     }

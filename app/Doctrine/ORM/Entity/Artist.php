@@ -20,7 +20,7 @@ class Artist
     #[GraphQL\Field(description: 'Primary key')]
     private int $id;
 
-    /** @var Collection<id, Performance> */
+    /** @var mixed[]]> */
     #[GraphQL\Association(description: 'Performances')]
     private Collection $performances;
 
@@ -81,7 +81,7 @@ class Artist
     /**
      * Get performances.
      *
-     * @return Collection<id, Performance>
+     * @return mixed[]
      */
     public function getPerformances(): Collection
     {

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\GraphQL\Query\Artist;
 
 use ApiSkeletons\Doctrine\ORM\GraphQL\Driver;
@@ -11,22 +13,27 @@ use GraphQL\Type\Definition\Type;
 
 class Entity implements Field
 {
+    /**
+     * @param  mixed[] $variables
+     *
+     * @return mixed[]
+     */
     public static function getDefinition(
         Driver $driver,
         array $variables = [],
-        ?string $operationName = null
+        string|null $operationName = null,
     ): array {
         return [
             'type' => $driver->type(Artist::class),
             'args' => [
                 'id' => Type::int(),
             ],
-            'resolve' => function($source, array $args, $context, ResolveInfo $info) use ($driver) {
+            'resolve' => static function ($source, array $args, $context, ResolveInfo $info) use ($driver) {
                 return $driver->get(EntityManager::class)
                     ->getRepository(Artist::class)
                     ->find($args['id']);
             },
-            'description' => <<<EOF
+            'description' => <<<'EOF'
 Fetch a single artist.
 EOF,
         ];

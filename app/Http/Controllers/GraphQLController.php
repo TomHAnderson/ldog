@@ -19,13 +19,16 @@ use GraphQL\Validator\DocumentValidator;
 use GraphQL\Validator\Rules\QueryComplexity;
 use Illuminate\Http\Request;
 
+use function array_map;
+use function config;
+
 class GraphQLController extends Controller
 {
     /** @return mixed[] */
     public function __invoke(EntityManager $entityManager, Request $request): array
     {
-        $query = $request->json('query');
-        $variables = $request->json('variables') ?? [];
+        $query         = $request->json('query');
+        $variables     = $request->json('variables') ?? [];
         $operationName = $request->json('operationName');
 
         $context = [];

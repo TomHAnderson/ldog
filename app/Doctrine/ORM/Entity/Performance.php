@@ -8,7 +8,6 @@ use ApiSkeletons\Doctrine\ORM\GraphQL\Attribute as GraphQL;
 use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
-
 /**
  * Performance
  */
@@ -30,7 +29,7 @@ class Performance
     #[GraphQL\Field(description: 'Primary key')]
     private int $id;
 
-    /** @var Collection<id, Recording> */
+    /** @var mixed[]]> */
     #[GraphQL\Association(description: 'Recordings by artist')]
     private Collection $recordings;
 
@@ -148,7 +147,7 @@ class Performance
     /**
      * Get recordings.
      *
-     * @return Collection<id, Recording>
+     * @return mixed
      */
     public function getRecordings(): Collection
     {
