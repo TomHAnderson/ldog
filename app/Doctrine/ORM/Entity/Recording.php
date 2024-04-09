@@ -5,9 +5,8 @@ declare(strict_types=1);
 namespace App\Doctrine\ORM\Entity;
 
 use ApiSkeletons\Doctrine\ORM\GraphQL\Attribute as GraphQL;
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
-
+use Doctrine\Common\Collections\ArrayCollection;
 /**
  * Recording
  */
@@ -23,7 +22,7 @@ class Recording
     #[GraphQL\Association(description: 'Performance entity')]
     private Performance $performance;
 
-    /** @var Collection<id, User> */
+    /** @var mixed[]> */
     #[GraphQL\Association(description: 'Users')]
     private Collection $users;
 
@@ -101,10 +100,8 @@ class Recording
 
     /**
      * Get users.
-     *
-     * @return Collection<id, User>
      */
-    public function getUsers(): Collection
+    public function getUsers(): ArrayCollection
     {
         return $this->users;
     }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\GraphQL\Mutation\Artist;
 
 use ApiSkeletons\Doctrine\ORM\GraphQL\Driver;
@@ -11,17 +13,22 @@ use GraphQL\Type\Definition\ResolveInfo;
 
 class Create implements Field
 {
+    /**
+     * @param  mixed[] $variables
+     *
+     * @return mixed[]
+     */
     public static function getDefinition(
         Driver $driver,
         array $variables = [],
-        ?string $operationName = null
+        string|null $operationName = null,
     ): array {
         return [
             'type' => $driver->type(Artist::class),
             'args' => [
                 'values' => $driver->input(Artist::class, ['name'], []),
             ],
-            'resolve' => function($source, array $args, $context, ResolveInfo $info) use ($driver) {
+            'resolve' => static function ($source, array $args, $context, ResolveInfo $info) use ($driver) {
                 $artist = new Artist();
 
                 $driver->get(DoctrineObject::class)->hydrate($args['values'], $artist);
@@ -30,7 +37,7 @@ class Create implements Field
 
                 return $artist;
             },
-            'description' => <<<EOF
+            'description' => <<<'EOF'
 Create an artist.
 EOF,
         ];

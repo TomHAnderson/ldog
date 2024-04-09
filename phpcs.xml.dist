@@ -22,5 +22,6 @@
 
     <!-- Include full Doctrine Coding Standard -->
     <rule ref="Doctrine">
+	    <exclude name="SlevomatCodingStandard.TypeHints.PropertyTypeHint.MissingTraversableTypeHintSpecification" />
     </rule>
 </ruleset>
