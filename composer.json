@@ -1,7 +1,7 @@
 {
-    "name": "api-skeletons/laravel-doctrine-orm-graphql",
+    "name": "api-skeletons/ldog",
     "type": "project",
-    "description": "Laravel with Doctrine and GraphQL",
+    "description": "ldog Stack: Laravel with Doctrine and GraphQL",
     "keywords": ["framework", "laravel", "doctrine", "graphql"],
     "license": "MIT",
     "require": {
