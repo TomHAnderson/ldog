@@ -8,6 +8,7 @@ use ApiSkeletons\Doctrine\ORM\GraphQL\Attribute as GraphQL;
 use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+
 /**
  * Performance
  */
@@ -147,7 +148,7 @@ class Performance
     /**
      * Get recordings.
      *
-     * @return mixed
+     * @return mixed[]
      */
     public function getRecordings(): Collection
     {
