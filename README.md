@@ -1,9 +1,23 @@
+<p align="center">
+    <img src="https://placehold.co/10x10/337ab7/337ab7.png" width="100%" height="15px">
+    <img src="https://raw.githubusercontent.com/api-skeletons/ldog/master/public/ldog.svg" width="450px">
+</p>
+
+ldog
+====
+
 Laravel, Doctrine, and GraphQL
-==============================
 
-This project is a starting point for how to use Laravel, Doctrine, and GraphQL together.
+This project is a starting point for using Laravel, Doctrine, and GraphQL together.
 
-Dcoumentation
+
+Home Page
+---------
+
+https://ldog.apiskeletons.dev
+
+
+Documentation
 -------------
 
 * Laravel - https://laravel.com/docs/10.x
