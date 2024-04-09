@@ -76,7 +76,12 @@ jobs:
       - name: Clear Config
         run: php artisan config:clear
 
-      - name: Test
+      - name: Create Database
+        run: php artisan doctrine:schema:create
+        env:
+          DB_PORT: ${{ job.services.mysql.ports['3306'] }}
+
+      - name: Test Code Quality
         run: composer test
         env:
           DB_PORT: ${{ job.services.mysql.ports['3306'] }}
