@@ -6,7 +6,7 @@ jobs:
     name: ldog (PHP ${{ matrix.php-versions }})
     runs-on: ubuntu-latest
     env:
-      DB_DATABASE: laravel
+      DB_DATABASE: ldog
       DB_USERNAME: root
       DB_PASSWORD: password
       BROADCAST_DRIVER: log
