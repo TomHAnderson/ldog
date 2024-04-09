@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\Mapping\DefaultNamingStrategy;
+use Ramsey\Uuid\Doctrine\UuidType;
 
 return [
 
@@ -121,7 +122,9 @@ return [
     | Create a custom or override a Doctrine Type
     |--------------------------------------------------------------------------
     */
-    'custom_types'               => [],
+    'custom_types'               => [
+        UuidType::NAME => UuidType::class,
+    ],
     /*
     |--------------------------------------------------------------------------
     | DQL custom datetime functions
