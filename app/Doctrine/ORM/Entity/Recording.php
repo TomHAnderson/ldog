@@ -102,7 +102,7 @@ class Recording
     /**
      * Get users.
      */
-    public function getUsers(): ArrayCollection
+    public function getUsers(): Collection
     {
         return $this->users;
     }
