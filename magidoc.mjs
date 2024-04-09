@@ -35,8 +35,13 @@ Laravel, Doctrine ORM, and GraphQL
 This is a template application for building GraphQL applications in Laravel
 with Doctrine ORM.  Abbreviated \`ldog\`.
 
-This template application uses Laravel 10.x because that is the latest version
-supported by https://www.laraveldoctrine.org.
+Brought to you by API Skeletons <contact@apiskeletons.com>
+
+<img
+    src="http://localhost/erd.png"
+    title="ERD"
+    alt="ERD"
+/>
                     `
                 },
                 {
