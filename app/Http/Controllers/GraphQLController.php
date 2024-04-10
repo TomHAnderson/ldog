@@ -34,7 +34,7 @@ class GraphQLController extends Controller
         $context = [];
 
         $driver = new Driver($entityManager, new Config([
-            'entityPrefix' => 'App\\Doctrine\\Entity\\',
+            'entityPrefix' => 'App\\Doctrine\\ORM\\Entity\\',
             'groupSuffix' => '',
             'sortFields' => true,
             'limit' => 100,
