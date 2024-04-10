@@ -191,6 +191,8 @@ Help Resources
 * GraphQL Type Driver for Doctrine ORM - https://doctrine-orm-graphql.apiskeletons.dev/en/latest/
 * Skipper - https://www.skipper18.com/help/
 * magidoc - https://magidoc.js.org/introduction/welcome
+* migrations - https://laraveldoctrine.org/docs/1.8/migrations
+* data fixtures - https://github.com/API-Skeletons/laravel-doctrine-data-fixtures/blob/main/README.md
 
 ---
 
