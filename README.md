@@ -7,7 +7,7 @@ ldog
 ====
 
 [![Build Status](https://github.com/API-Skeletons/ldog/actions/workflows/ldog.yml/badge.svg)](https://github.com/API-Skeletons/ldog/actions/workflows/ldog.yml?query=branch%3Amain)
-[![PHP Version](https://img.shields.io/badge/PHP-8.1%2b-blue)](https://img.shields.io/badge/PHP-8.3%2b-blue)
+[![PHP Version](https://img.shields.io/badge/PHP-8.3%2b-blue)](https://img.shields.io/badge/PHP-8.3%2b-blue)
 [![Total Downloads](https://poser.pugx.org/api-skeletons/ldog/downloads)](//packagist.org/packages/api-skeletons/ldog)
 [![License](https://poser.pugx.org/api-skeletons/ldog/license)](//packagist.org/packages/api-skeletons/ldog)
 
