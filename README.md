@@ -33,3 +33,5 @@ Documentation
 * GraphQL-php - https://webonyx.github.io/graphql-php/
 * magidoc - https://magidoc.js.org/introduction/welcome
 * graphiql - https://github.com/graphql/graphiql/blob/main/packages/graphiql/README.md
+* migrations - https://laraveldoctrine.org/docs/1.8/migrations
+* data fixtures - https://github.com/API-Skeletons/laravel-doctrine-data-fixtures/blob/main/README.md
