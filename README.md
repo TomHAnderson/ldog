@@ -12,9 +12,9 @@ ldog stack
 [![Slack Channel](https://camo.githubusercontent.com/21134ce22db8dc96c8ffed33cbfe3912dd1a17cf81c747983fbcad9769ac6509/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f736c61636b2d6a6f696e2d6f72616e67652e737667)](https://apiskeletons.slack.com/archives/C06TEBW5P2A)
 [![License](https://poser.pugx.org/api-skeletons/ldog/license)](//packagist.org/packages/api-skeletons/ldog)
 
-Laravel, Doctrine, and GraphQL
+Laravel, Doctrine ORM, and GraphQL
 
-This project is a starting point for using Laravel, Doctrine, and GraphQL together.
+This project is a starting point for using Laravel, Doctrine ORM, and GraphQL together.
 
 
 Home Page
@@ -28,7 +28,7 @@ Documentation
 
 * Laravel - https://laravel.com/docs/10.x
 * Laravel Doctrine Adapter - https://www.laraveldoctrine.org/
-* Doctrine - https://www.doctrine-project.org/projects/doctrine-orm/en/2.10/index.html
+* Doctrine ORM - https://www.doctrine-project.org/projects/doctrine-orm/en/2.10/index.html
 * GraphQL Type Driver for Doctrine ORM - https://doctrine-orm-graphql.apiskeletons.dev/en/latest/
 * GraphQL-php - https://webonyx.github.io/graphql-php/
 * magidoc - https://magidoc.js.org/introduction/welcome
