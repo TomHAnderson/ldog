@@ -8,21 +8,21 @@ export default {
         output: './public/docs',
         options: {
             siteRoot: `/docs`,
-            appTitle: 'ldog Stack',
+            appTitle: 'LDOG Stack',
             appLogo: 'https://raw.githubusercontent.com/API-Skeletons/ldog/main/public/ldog.svg',
 	    appFavicon: 'https://apiskeletons.com/images/favicon.ico',
             pages: [
                 {
                     title: 'Welcome',
                     content: `
-ldog Stack
+LDOG Stack
 ==========
 
 Laravel, Doctrine ORM, and GraphQL
 ----------------------------------
 
 This is a template application for building GraphQL applications in
-Laravel with Doctrine ORM.  **Known as the ldog (el-dog) Stack.**
+Laravel with Doctrine ORM.  **Known as the LDOG (el-dog) Stack.**
 
 To create a new project run
 \`\`\`
@@ -170,6 +170,27 @@ To ensure code quality, run \`composer test\` to run the following:
 * [Doctrine Coding Standard](https://www.doctrine-project.org/projects/doctrine-coding-standard/en/11.0/reference/index.html)
 * [Psalm](https://psalm.dev/docs/)
 * [PHPUnit](https://docs.phpunit.de/en/10.5/)
+
+---
+
+A project of [API Skeletons](mailto:contact@apiskeletons.com)
+* https://github.com/api-skeletons/ldog
+                    `
+                },
+                {
+                    title: 'Fixtures',
+                    content: `
+Fixtures
+--------
+
+Included with LDOG is a Doctrine fixture library.  There are two included fixtures.  To rebuild the
+SQLite database, copy \`.env.dev\` to \`.env\`, delete the \`~/database/database.sqlite\` file, and run
+
+\`\`\`
+rm database/database.sqlite
+php artisan doctrine:schema:create
+php artisan doctrine:data-fixture:import faker
+\`\`\`
 
 ---
 

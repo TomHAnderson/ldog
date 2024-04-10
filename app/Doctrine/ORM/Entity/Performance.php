@@ -145,6 +145,25 @@ class Performance
         return $this->recordings->removeElement($recording);
     }
 
+    public function addRecordings(Collection $recordings): self
+    {
+        foreach ($recordings as $recording) {
+            $recording->setPerformance($this);
+            $this->addRecording($recording);
+        }
+
+        return $this;
+    }
+
+    public function removeRecordings(Collection $recordings): self
+    {
+        foreach ($recordings as $recording) {
+            $this->removeRecording($recording);
+        }
+
+        return $this;
+    }
+
     /**
      * Get recordings.
      *

@@ -13,14 +13,16 @@ use Doctrine\Common\Collections\ArrayCollection;
 #[GraphQL\Entity(description: 'User', typeName: 'user')]
 class User
 {
-    #[GraphQL\Field(description: 'User name')]
+    #[GraphQL\Field(description: 'Name')]
     private string $name;
 
-    #[GraphQL\Field(description: 'User email')]
+    #[GraphQL\Field(description: 'Email')]
     private string $email;
 
-    #[GraphQL\Field(description: 'User password')]
     private string $password;
+
+    #[GraphQL\Field(description: 'Role')]
+    private string $role;
 
     #[GraphQL\Field(description: 'Primary key')]
     private int $id;
@@ -88,6 +90,18 @@ class User
     public function getPassword(): string
     {
         return $this->password;
+    }
+
+    public function setRole(string $role): self
+    {
+        $this->role = $role;
+
+        return $this;
+    }
+
+    public function getRole(): string
+    {
+        return $this->role;
     }
 
     /**
