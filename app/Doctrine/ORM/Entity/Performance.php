@@ -136,16 +136,10 @@ class Performance
     }
 
     /**
-     * Remove recording.
+     * Add recordings.
      *
-     * @return bool TRUE if this collection contained the specified element, FALSE otherwise.
+     * @param Collection<int, Recording> $recordings
      */
-    public function removeRecording(Recording $recording): bool
-    {
-        return $this->recordings->removeElement($recording);
-    }
-
-    /** @param mixed[] $recordings */
     public function addRecordings(Collection $recordings): self
     {
         foreach ($recordings as $recording) {
@@ -156,7 +150,21 @@ class Performance
         return $this;
     }
 
-    /** @param mixed[] $recordings */
+    /**
+     * Remove recording.
+     *
+     * @return bool TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeRecording(Recording $recording): bool
+    {
+        return $this->recordings->removeElement($recording);
+    }
+
+    /**
+     * Remove recordings.
+     *
+     * @param Collection<int, Recording> $recordings
+     */
     public function removeRecordings(Collection $recordings): self
     {
         foreach ($recordings as $recording) {

@@ -69,6 +69,21 @@ class Artist
     }
 
     /**
+     * Add performances.
+     *
+     * @param Collection<int, Performance> $performances
+     */
+    public function addPerformances(Collection $performances): self
+    {
+        foreach ($performances as $performance) {
+            $performance->setArtist($this);
+            $this->addPerformance($performance);
+        }
+
+        return $this;
+    }
+
+    /**
      * Remove performance.
      *
      * @return bool TRUE if this collection contained the specified element, FALSE otherwise.
@@ -79,6 +94,20 @@ class Artist
     }
 
     /**
+     * Remove performances.
+     *
+     * @param Collection<int, Performance> $performances
+     */
+    public function removePerformances(Collection $performances): self
+    {
+        foreach ($performances as $performance) {
+            $this->removePerformance($performance);
+        }
+
+        return $this;
+    }
+
+    /**
      * Get performances.
      *
      * @return mixed[]
@@ -86,24 +115,5 @@ class Artist
     public function getPerformances(): Collection
     {
         return $this->performances;
-    }
-
-    public function addPerformances(ArrayCollection $performances): self
-    {
-        foreach ($performances as $performance) {
-            $performance->setArtist($this);
-            $this->addPerformance($performance);
-        }
-
-        return $this;
-    }
-
-    public function removePerformances(ArrayCollection $performances): self
-    {
-        foreach ($performances as $performance) {
-            $this->removePerformance($performance);
-        }
-
-        return $this;
     }
 }

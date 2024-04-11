@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use App\Doctrine\ORM\DataFixtures\Faker;
+use Database\DataFixtures\Faker\Faker;
 use Doctrine\Common\DataFixtures\Executor\ORMExecutor;
 use Doctrine\Common\DataFixtures\Purger\ORMPurger;
 use Doctrine\ORM\EntityManager;
@@ -29,6 +29,6 @@ return [
         'objectManager' => EntityManager::class,
         'executor' => ORMExecutor::class,
         'purger' => ORMPurger::class,
-        'fixtures' => [Faker\Faker::class],
+        'fixtures' => [Faker::class],
     ],
 ];
