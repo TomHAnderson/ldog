@@ -23,7 +23,7 @@ final class Faker implements
         $data = [
             [
                 'name' => 'Grateful Dead',
-                'recordings' => [
+                'performances' => [
                     [
                         'performanceDate' => DateTime::createFromFormat('Y-m-d', '1995-02-21'),
                         'venue' => 'Delta Center',
