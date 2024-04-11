@@ -145,6 +145,7 @@ class Performance
         return $this->recordings->removeElement($recording);
     }
 
+    /** @param mixed[] $recordings */
     public function addRecordings(Collection $recordings): self
     {
         foreach ($recordings as $recording) {
@@ -155,6 +156,7 @@ class Performance
         return $this;
     }
 
+    /** @param mixed[] $recordings */
     public function removeRecordings(Collection $recordings): self
     {
         foreach ($recordings as $recording) {

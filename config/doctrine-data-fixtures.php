@@ -29,8 +29,6 @@ return [
         'objectManager' => EntityManager::class,
         'executor' => ORMExecutor::class,
         'purger' => ORMPurger::class,
-        'fixtures' => [
-            Faker\Faker::class
-        ],
+        'fixtures' => [Faker\Faker::class],
     ],
 ];

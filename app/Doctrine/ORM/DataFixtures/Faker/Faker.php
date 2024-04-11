@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Doctrine\ORM\DataFixtures\Faker;
 
 use App\Doctrine\ORM\Entity\Artist as ArtistEntity;
@@ -32,8 +34,8 @@ final class Faker implements
                                 'source' => 'SBD> D> CD-R> EAC> SHN; via Jay Serafin, Brian '
                                     . 'Walker; see info file and pub comments for notes; '
                                     . 'possibly "click track" audible on a couple tracks',
-                                'DSBD > 1C > DAT; Seeded to etree by Dan Stephens',
                             ],
+                            ['source' => 'DSBD > 1C > DAT; Seeded to etree by Dan Stephens'],
                         ],
                     ],
                     [
@@ -68,9 +70,7 @@ final class Faker implements
                         'city' => 'West Valley City',
                         'state' => 'UT',
                         'recordings' => [
-                            [
-                                'source' => 'AKG480 > Aerco preamp > SBM-1',
-                            ],
+                            ['source' => 'AKG480 > Aerco preamp > SBM-1'],
                         ],
                     ],
                     [
