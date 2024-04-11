@@ -135,6 +135,11 @@ class Performance
         return $this;
     }
 
+    /**
+     * Add recordings.
+     *
+     * @param Collection<int, Recording> $recordings
+     */
     public function addRecordings(Collection $recordings): self
     {
         foreach ($recordings as $recording) {
@@ -155,6 +160,11 @@ class Performance
         return $this->recordings->removeElement($recording);
     }
 
+    /**
+     * Remove recordings.
+     *
+     * @param Collection<int, Recording> $recordings
+     */
     public function removeRecordings(Collection $recordings): self
     {
         foreach ($recordings as $recording) {

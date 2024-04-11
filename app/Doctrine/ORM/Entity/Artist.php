@@ -68,6 +68,11 @@ class Artist
         return $this;
     }
 
+    /**
+     * Add performances.
+     *
+     * @param Collection<int, Performance> $performances
+     */
     public function addPerformances(Collection $performances): self
     {
         foreach ($performances as $performance) {
@@ -88,6 +93,11 @@ class Artist
         return $this->performances->removeElement($performance);
     }
 
+    /**
+     * Remove performances.
+     *
+     * @param Collection<int, Performance> $performances
+     */
     public function removePerformances(Collection $performances): self
     {
         foreach ($performances as $performance) {
