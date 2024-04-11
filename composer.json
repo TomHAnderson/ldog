@@ -1,7 +1,7 @@
 {
     "name": "api-skeletons/ldog",
     "type": "project",
-    "description": "ldog Stack: Laravel with Doctrine and GraphQL",
+    "description": "LDOG Stack: Laravel, Doctrine ORM, and GraphQL",
     "keywords": ["framework", "laravel", "doctrine", "graphql"],
     "license": "MIT",
     "require": {
