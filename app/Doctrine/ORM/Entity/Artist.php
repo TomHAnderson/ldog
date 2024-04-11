@@ -68,6 +68,16 @@ class Artist
         return $this;
     }
 
+    public function addPerformances(Collection $performances): self
+    {
+        foreach ($performances as $performance) {
+            $performance->setArtist($this);
+            $this->addPerformance($performance);
+        }
+
+        return $this;
+    }
+
     /**
      * Remove performance.
      *
@@ -76,6 +86,15 @@ class Artist
     public function removePerformance(Performance $performance): bool
     {
         return $this->performances->removeElement($performance);
+    }
+
+    public function removePerformances(Collection $performances): self
+    {
+        foreach ($performances as $performance) {
+            $this->removePerformance($performance);
+        }
+
+        return $this;
     }
 
     /**
