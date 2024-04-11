@@ -2,8 +2,10 @@
 
 declare(strict_types=1);
 
+use App\Doctrine\ORM\DataFixtures\Faker;
 use Doctrine\Common\DataFixtures\Executor\ORMExecutor;
 use Doctrine\Common\DataFixtures\Purger\ORMPurger;
+use Doctrine\ORM\EntityManager;
 
 /**
  * In the default values listed below, ORM fixtures are configured.  You may
@@ -16,16 +18,17 @@ use Doctrine\Common\DataFixtures\Purger\ORMPurger;
 // The order of fixtures in the fixtures array is not the order in which
 // they will be executed.  See
 // https://github.com/doctrine/data-fixtures#fixture-ordering
-/**
-Fixture1::class,
-Fixture2::class,
-*/
-
 return [
     'default' => [  // Group name
-        'objectManager' => 'Doctrine\ORM\EntityManager',
+        'objectManager' => EntityManager::class,
         'executor' => ORMExecutor::class,
         'purger' => ORMPurger::class,
         'fixtures' => [],
+    ],
+    'faker' => [  // Group name
+        'objectManager' => EntityManager::class,
+        'executor' => ORMExecutor::class,
+        'purger' => ORMPurger::class,
+        'fixtures' => [Faker\Faker::class],
     ],
 ];

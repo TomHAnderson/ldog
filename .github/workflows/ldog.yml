@@ -81,8 +81,8 @@ jobs:
         env:
           DB_PORT: ${{ job.services.mysql.ports['3306'] }}
 
-      - name: Import Fixturess
-        run: php artisan doctrine:data-fixtures:import default
+      - name: Import Fixtures
+        run: php artisan doctrine:data-fixtures:import faker
         env:
           DB_PORT: ${{ job.services.mysql.ports['3306'] }}
 

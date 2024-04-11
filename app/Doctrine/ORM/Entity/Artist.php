@@ -87,4 +87,23 @@ class Artist
     {
         return $this->performances;
     }
+
+    public function addPerformances(ArrayCollection $performances): self
+    {
+        foreach ($performances as $performance) {
+            $performance->setArtist($this);
+            $this->addPerformance($performance);
+        }
+
+        return $this;
+    }
+
+    public function removePerformances(ArrayCollection $performances): self
+    {
+        foreach ($performances as $performance) {
+            $this->removePerformance($performance);
+        }
+
+        return $this;
+    }
 }
