@@ -3,7 +3,7 @@
     <img src="https://raw.githubusercontent.com/api-skeletons/ldog/master/public/ldog.svg" width="450px">
 </p>
 
-ldog stack
+LDOG Stack
 ==========
 
 [![Build Status](https://github.com/API-Skeletons/ldog/actions/workflows/ldog.yml/badge.svg)](https://github.com/API-Skeletons/ldog/actions/workflows/ldog.yml?query=branch%3Amain)
