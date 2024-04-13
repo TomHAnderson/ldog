@@ -7,6 +7,8 @@ namespace App\Providers;
 use ApiSkeletons\Laravel\Doctrine\ApiKey\Service\ApiKeyService;
 use Illuminate\Support\ServiceProvider;
 
+use function app;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
