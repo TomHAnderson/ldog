@@ -7,6 +7,7 @@
     "require": {
         "php": "^8.3",
         "api-skeletons/doctrine-orm-graphql": "^10.2",
+        "api-skeletons/laravel-doctrine-apikey": "^2.0.2",
         "api-skeletons/laravel-doctrine-data-fixtures": "^1.0",
         "guzzlehttp/guzzle": "^7.2",
         "laravel-doctrine/migrations": "^3.1",
