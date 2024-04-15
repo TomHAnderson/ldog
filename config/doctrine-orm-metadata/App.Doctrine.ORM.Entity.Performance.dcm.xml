@@ -7,7 +7,7 @@
     <field name="venue" type="string" nullable="true"/>
     <field name="city" type="string" nullable="true"/>
     <field name="state" type="string" nullable="true"/>
-    <field name="performanceDate" type="datetime" nullable="false"/>
+    <field name="performanceDate" type="date" nullable="false"/>
     <many-to-one field="artist" target-entity="App\Doctrine\ORM\Entity\Artist" inversed-by="performances">
       <join-columns>
         <join-column name="artist_id" referenced-column-name="id" nullable="false"/>

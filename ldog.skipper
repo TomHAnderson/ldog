@@ -11,7 +11,7 @@
       <field name="venue" type="string" uuid="f07a7a76-a781-446e-9b9b-bc2a32f12073"/>
       <field name="city" type="string" uuid="0dc8ac15-38f0-40ab-90dc-38fb939a6e86"/>
       <field name="state" type="string" uuid="b9d6c7ac-8c46-4d74-91a7-75ec51ca46be"/>
-      <field name="performanceDate" type="datetime" required="true" uuid="6445ff83-a7ec-43ef-852a-a236abd3cc4c"/>
+      <field name="performanceDate" type="date" required="true" uuid="6445ff83-a7ec-43ef-852a-a236abd3cc4c"/>
     </entity>
     <association from="\App\Doctrine\ORM\Entity\Performance" to="\App\Doctrine\ORM\Entity\Artist" caption="artist performances" owner-alias="performances" inverse-alias="artist" many-owner="true" many-inverse="false" parent-required="true" uuid="4f0247e2-6d76-42f9-b56b-52306c2fa201">
       <association-field from="artist_id" to="id" uuid="8ba1d43e-9bcc-4c68-9470-e2d1ce7e8191"/>
@@ -50,6 +50,38 @@
     </orm-attributes>
   </module>
   <external-module storage-path="vendor/api-skeletons/laravel-doctrine-apikey/ApiKey.skipper.module"/>
+  <module name="\Passport" local-name="Passport" namespace="\" uuid="15347adb-b310-4527-b4ba-57c8f36ca1d5">
+    <entity name="\migrations" local-name="migrations" namespace="\" uuid="e103599d-8e1e-46b9-a479-aa52f0d8f593">
+      <field name="id" type="integer" required="true" unique="true" primary="true" auto-increment="true" uuid="1a1b8c15-4b56-4335-8d00-f9cb5a4f4aeb"/>
+      <field name="migration" type="string" required="true" uuid="712a2910-b42d-496f-b1cf-d957ea13ae44"/>
+      <field name="batch" type="integer" required="true" uuid="42bd0614-9077-493c-8ecd-7267b337418d"/>
+      <orm-attributes>
+        <attribute name="table">migrations</attribute>
+      </orm-attributes>
+    </entity>
+    <entity name="\personal_access_tokens" local-name="personal_access_tokens" namespace="\" uuid="89f37a78-2c71-4535-920c-8975771a4465">
+      <field name="id" type="integer" required="true" unique="true" primary="true" auto-increment="true" uuid="38e00fb0-bb8b-4bf6-ac5e-a12dc6ebbd19"/>
+      <field name="tokenable_type" type="string" required="true" uuid="b647e0c5-ca9c-434e-aba1-339ed234b775"/>
+      <field name="tokenable_id" type="integer" required="true" uuid="af760ce5-dfdb-4d4e-9403-0adbd556d65d"/>
+      <field name="name" type="string" required="true" uuid="b5fe402b-67dd-4939-adb6-c5f3b39e9952"/>
+      <field name="token" type="string" required="true" uuid="adc6a44d-8d2c-4b27-9fcf-28829d3e6f9c"/>
+      <field name="abilities" type="text" uuid="c2cdba1f-e3b0-4a82-bae9-5a7f8509d300"/>
+      <field name="last_used_at" type="datetime" uuid="fa8b2ef5-aedb-453f-9ffb-5d9225cebfea"/>
+      <field name="expires_at" type="datetime" uuid="d4061637-7348-40cd-aab2-b8ae3f7b6553"/>
+      <field name="created_at" type="datetime" uuid="bca34e13-d3c5-4e2a-abad-f2288f254da6"/>
+      <field name="updated_at" type="datetime" uuid="6de1e70b-6e2a-4dc3-b04f-b6246daa708e"/>
+      <index name="personal_access_tokens_token_unique" unique="true" uuid="456cc82b-42f5-4139-9011-1c45542c3149">
+        <index-field name="token" uuid="5772e17d-ebf3-456a-bb77-10f97e714f40"/>
+      </index>
+      <index name="personal_access_tokens_tokenable_type_tokenable_id_index" uuid="9e104ec0-7b9b-4904-9f56-6444ee7fd421">
+        <index-field name="tokenable_type" uuid="5f826091-d773-434e-a98b-4b72b57ebb77"/>
+        <index-field name="tokenable_id" uuid="22a41aa9-4860-4ffd-ae88-3a4fb25e9d3e"/>
+      </index>
+      <orm-attributes>
+        <attribute name="table">personal_access_tokens</attribute>
+      </orm-attributes>
+    </entity>
+  </module>
   <visual-data>
     <association uuid="056be1e5-0677-44ad-8f6f-1b4023eb9a7d" color="#969696"/>
     <association uuid="4f0247e2-6d76-42f9-b56b-52306c2fa201" caption1-position-x="0" caption1-position-y="0" center-position-x="0" center-position-y="0" color="#969696"/>
@@ -58,12 +90,15 @@
     <comment uuid="0e4ff410-5025-42fd-89ae-0d05319ab49b" bg-color="#FFFFE0" position-x="243" position-y="253" size-x="6" size-x2="128" size-y="-3" size-y2="63" txt-color="#000000"/>
     <entity uuid="10de66e4-a8b3-44a9-a6d0-a9fd28338fe2" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="-3" position-y="-29" size-x="0" size-x2="77" size-y="0" size-y2="45"/>
     <entity uuid="568a03b7-3dd5-435a-9bc8-869bc673923c" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="-3" position-y="136" size-x="0" size-x2="93" size-y="0" size-y2="87"/>
+    <entity uuid="89f37a78-2c71-4535-920c-8975771a4465" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="178" position-y="40" size-x="0" size-x2="118" size-y="0" size-y2="157"/>
     <entity uuid="8a04b312-72bb-4723-baac-75502524ae38" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="177" position-y="-44" size-x="0" size-x2="136" size-y="0" size-y2="101"/>
     <entity uuid="ad470906-9e63-41e7-9558-979789bc2d28" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="177" position-y="136" size-x="0" size-x2="122" size-y="0" size-y2="59"/>
+    <entity uuid="e103599d-8e1e-46b9-a479-aa52f0d8f593" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="33" position-y="40" size-x="0" size-x2="91" size-y="0" size-y2="59"/>
     <entity uuid="e5603f71-6798-480b-bcf8-0d185a08e653" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="77" position-y="256" size-x="0" size-x2="109" size-y="0" size-y2="60"/>
     <many-to-many-association uuid="e4936d0d-1d1f-4fb8-af31-fa1d0665ccf7" color="#969696"/>
+    <module uuid="15347adb-b310-4527-b4ba-57c8f36ca1d5" bg-color="#FEEFE3" position-x="0" position-y="500" size-x="0" size-x2="460" size-y="0" size-y2="317"/>
     <module uuid="5bbfe5b4-7579-44ee-81f9-fa036ee071a3" position-x="443" position-y="-18"/>
     <module uuid="d5f257f8-d854-4bae-a05d-1ed8673c7eb5" bg-color="#E0F0EF" position-x="43" position-y="84" size-x="43" size-x2="417" size-y="84" size-y2="376"/>
-    <project uuid="25d2b513-c6b7-4071-9ada-7c48f127f426" size-x="50" size-x2="1220" size-y="50" size-y2="500"/>
+    <project uuid="25d2b513-c6b7-4071-9ada-7c48f127f426" size-x="70" size-x2="1220" size-y="50" size-y2="867"/>
   </visual-data>
 </skipper>
