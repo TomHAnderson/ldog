@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1fd19b34bb18af0b5c323e57641fc61d",
+    "content-hash": "fcee5fcf4a06c517e53b786e3ee0ce40",
     "packages": [
         {
             "name": "api-skeletons/doctrine-orm-graphql",
-            "version": "11.0.0",
+            "version": "11.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/API-Skeletons/doctrine-orm-graphql.git",
-                "reference": "e73ee62065bbe2263a82a076208039868ba8ef5d"
+                "reference": "d048242bac1c2f8b8dd9b54219c3229f7ae7e070"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/API-Skeletons/doctrine-orm-graphql/zipball/e73ee62065bbe2263a82a076208039868ba8ef5d",
-                "reference": "e73ee62065bbe2263a82a076208039868ba8ef5d",
+                "url": "https://api.github.com/repos/API-Skeletons/doctrine-orm-graphql/zipball/d048242bac1c2f8b8dd9b54219c3229f7ae7e070",
+                "reference": "d048242bac1c2f8b8dd9b54219c3229f7ae7e070",
                 "shasum": ""
             },
             "require": {
@@ -57,9 +57,9 @@
             "description": "GraphQL Type Driver for Doctrine ORM",
             "support": {
                 "issues": "https://github.com/API-Skeletons/doctrine-orm-graphql/issues",
-                "source": "https://github.com/API-Skeletons/doctrine-orm-graphql/tree/11.0.0"
+                "source": "https://github.com/API-Skeletons/doctrine-orm-graphql/tree/11.0.1"
             },
-            "time": "2024-04-15T03:34:41+00:00"
+            "time": "2024-04-15T11:51:50+00:00"
         },
         {
             "name": "api-skeletons/laravel-api-problem",
