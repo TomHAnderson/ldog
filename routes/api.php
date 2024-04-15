@@ -13,4 +13,3 @@ Route::post('/', GraphQLController::class)
 Route::middleware('auth.apikey')
     ->post('/apikey', GraphQLController::class)
     ->name('graphql-apikey');
-
