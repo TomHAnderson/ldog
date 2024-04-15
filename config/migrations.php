@@ -27,7 +27,7 @@ return [
             | the migrations on disk haven't actually been run in the database.
             |
             */
-            'table_name'     => 'migrations',
+            'table_name'     => 'doctrine_migrations',
 
             /*
             |--------------------------------------------------------------------------
@@ -43,7 +43,7 @@ return [
         ],
 
         'migrations_paths' => [
-            'Database\\Migrations' => database_path('migrations'),
+            'Database\\Doctrine\\Migrations' => __DIR__ . '/../database/doctrine-migrations',
         ],
 
         /*

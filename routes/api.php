@@ -5,16 +5,11 @@ declare(strict_types=1);
 use App\Http\Controllers\GraphQLController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "api" middleware group. Make something great!
-|
-*/
-
+// Open API endpoint for GraphQL
 Route::post('/', GraphQLController::class)
     ->name('graphql');
+
+// APIKey secured endpoint for GraphQL
+Route::middleware('auth.apikey')
+    ->post('/apikey', GraphQLController::class)
+    ->name('graphql-apikey');

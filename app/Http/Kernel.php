@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http;
 
+use ApiSkeletons\Laravel\Doctrine\ApiKey\Http\Middleware\AuthorizeApiKey;
 use App\Http\Middleware\Authenticate;
 use App\Http\Middleware\EncryptCookies;
 use App\Http\Middleware\PreventRequestsDuringMaintenance;
@@ -66,7 +67,6 @@ class Kernel extends HttpKernel
         ],
 
         'api' => [
-            // 'auth.apikey' => AuthorizeApiKey:class
             ThrottleRequests::class . ':api',
             SubstituteBindings::class,
         ],
@@ -83,6 +83,7 @@ class Kernel extends HttpKernel
     // phpcs:disable
     protected $middlewareAliases = [
         'auth' => Authenticate::class,
+        'auth.apikey' => AuthorizeApiKey::class,
         'auth.basic' => AuthenticateWithBasicAuth::class,
         'auth.session' => AuthenticateSession::class,
         'cache.headers' => SetCacheHeaders::class,
