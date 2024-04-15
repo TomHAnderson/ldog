@@ -77,7 +77,7 @@ jobs:
         run: php artisan config:clear
 
       - name: Create Database
-        run: php artisan doctrine:schema:create
+        run: php artisan migrate --force && php artisan doctrine:schema:create
         env:
           DB_PORT: ${{ job.services.mysql.ports['3306'] }}
 
