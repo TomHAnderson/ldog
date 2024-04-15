@@ -31,6 +31,8 @@ Documentation
 * Doctrine ORM - https://www.doctrine-project.org/projects/doctrine-orm/en/2.10/index.html
 * GraphQL Type Driver for Doctrine ORM - https://doctrine-orm-graphql.apiskeletons.dev/en/latest/
 * GraphQL-php - https://webonyx.github.io/graphql-php/
+* API Key - https://github.com/API-Skeletons/laravel-doctrine-apikey
+* Passport - https://laravel.com/docs/10.x/passport
 * magidoc - https://magidoc.js.org/introduction/welcome
 * graphiql - https://github.com/graphql/graphiql/blob/main/packages/graphiql/README.md
 * migrations - https://laraveldoctrine.org/docs/1.8/migrations
