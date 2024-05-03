@@ -13,7 +13,7 @@ export default {
             siteRoot: `/docs`,
             appTitle: 'LDOG Stack',
             appFavicon: 'https://apiskeletons.com/images/favicon.ico',
-            appLogo: 'https://raw.githubusercontent.com/API-Skeletons/ldog/2.0.x/public/ldog.svg',
+            appLogo: 'https://raw.githubusercontent.com/API-Skeletons/ldog/2.0.x/public/smalllogo.png',
             siteMeta: {
                 description:
                     'A PHP Stack with Laravel, Doctrine ORM, and GraphQL.',
