@@ -1,5 +1,3 @@
-import { fileURLToPath } from 'node:url'
-
 const { pages } = await import(`./pages.mjs?id=${Math.random()}`)
 
 export default {
@@ -12,8 +10,8 @@ export default {
         options: {
             siteRoot: `/docs`,
             appTitle: 'LDOG Stack',
-            appFavicon: 'https://raw.githubusercontent.com/API-Skeletons/ldog/2.0.x/public/icon.png',
-            appLogo: 'https://raw.githubusercontent.com/API-Skeletons/ldog/2.0.x/public/smalllogo.png',
+            appFavicon: 'https://raw.githubusercontent.com/API-Skeletons/ldog/2.0.x/public/assets/icon.png',
+            appLogo: 'https://raw.githubusercontent.com/API-Skeletons/ldog/2.0.x/public/assets/smalllogo.png',
             siteMeta: {
                 description:
                     'A PHP Stack with Laravel, Doctrine ORM, and GraphQL.',
@@ -25,7 +23,7 @@ export default {
                 'og:title': 'LDOG Stack',
                 'og:type': 'article',
                 'og:image':
-                    'https://raw.githubusercontent.com/API-Skeletons/ldog/main/public/ldog.svg',
+                    'https://raw.githubusercontent.com/API-Skeletons/ldog/main/public/assets/share.png',
             },
             pages: pages,
         }
