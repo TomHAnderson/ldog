@@ -12,7 +12,7 @@ export default {
         options: {
             siteRoot: `/docs`,
             appTitle: 'LDOG Stack',
-            appFavicon: 'https://apiskeletons.com/images/favicon.ico',
+            appFavicon: 'https://raw.githubusercontent.com/API-Skeletons/ldog/2.0.x/public/icon.png',
             appLogo: 'https://raw.githubusercontent.com/API-Skeletons/ldog/2.0.x/public/smalllogo.png',
             siteMeta: {
                 description:
