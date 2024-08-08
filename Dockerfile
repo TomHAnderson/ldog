@@ -27,15 +27,26 @@ RUN apt-get install --yes libxml2-dev
 RUN apt-get install --yes default-mysql-client
 RUN apt-get install --yes procps
 RUN apt-get install --yes redis
-RUN apt-get install --yes nodejs
-RUN apt-get install --yes npm
 
 # Environment
 ENV PHP_OPCACHE_VALIDATE_TIMESTAMPS="0" \
     PHP_OPCACHE_MAX_ACCELERATED_FILES="10000" \
     PHP_OPCACHE_MEMORY_CONSUMPTION="192" \
-    PHP_OPCACHE_MAX_WASTED_PERCENTAGE="10"
- 
+    PHP_OPCACHE_MAX_WASTED_PERCENTAGE="10" \
+    NVM_DIR=/root/.nvm \
+    NODE_VERSION=v22.6.0
+
+# Node and Magidoc
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash \
+    && . $NVM_DIR/nvm.sh \
+    && nvm install $NODE_VERSION \
+    && nvm alias default $NODE_VERSION \
+    && nvm use default \
+    && npm install -g pnpm \
+    && which pnpm \
+    && SHELL=/bin/bash PNPM_HOME=/usr/bin pnpm setup \ 
+    && SHELL=/bin/bash PNPM_HOME=/usr/bin pnpm add --global @magidoc/cli@6.0.1
+
 # PHP
 RUN docker-php-ext-install pdo_mysql mysqli gd zip xml soap opcache
 RUN apt-get update && apt-get install -y zlib1g-dev libicu-dev g++
@@ -59,11 +70,6 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 RUN php composer-setup.php
 RUN php -r "unlink('composer-setup.php');"
 RUN mv composer.phar /bin/composer
-
-# Node and Magidoc
-RUN npm install -g pnpm
-RUN SHELL=/bin/bash pnpm setup
-RUN SHELL=/bin/bash PNPM_HOME=/usr/bin pnpm add --global @magidoc/cli@latest
 
 # Copy app files
 WORKDIR /var/www
