@@ -34,16 +34,17 @@ class GraphQLController extends Controller
         $context = [];
 
         $driver = new Driver($entityManager, new Config([
+            'globalByValue' => false,
             'entityPrefix' => 'App\\Doctrine\\ORM\\Entity\\',
             'groupSuffix' => '',
-            'sortFields' => true,
             'limit' => 100,
+            'sortFields' => true,
             'useHydratorCache' => true,
         ]));
 
         // Because the hydrator is used in mutation fields, set it in the Driver
         // container for easy access.
-        $driver->set(DoctrineObject::class, new DoctrineObject($entityManager));
+        $driver->set(DoctrineObject::class, new DoctrineObject($entityManager, false));
 
         $schema = new Schema([
             'query' => new ObjectType([
