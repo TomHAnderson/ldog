@@ -108,7 +108,7 @@ final class Faker implements
          * Use the DoctrineObject hydrator to hydrate the entity.
          * This maintains a consistent pattern in all DataFixtures.
          */
-        $hydrator = new DoctrineObject($manager);
+        $hydrator = new DoctrineObject($manager, false);
 
         foreach ($data as $row) {
             $artist = $manager
