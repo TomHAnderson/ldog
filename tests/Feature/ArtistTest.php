@@ -7,6 +7,7 @@ namespace Tests\Feature;
 use Tests\TestCase;
 
 use function count;
+use function uniqid;
 
 class ArtistTest extends TestCase
 {
@@ -17,16 +18,18 @@ class ArtistTest extends TestCase
     {
         // Create a new artist
         $response = $this->postJson('/', [
-            'query' => 'mutation {
+            'query' => 'mutation ArtistCreate($name: String!) {
               artistCreate (values: {
-                name: "Test Artist"
+                name: $name
               }) {
                 id
                 name
               }
             }',
-            'variables' => [],
-            'operationName' => null,
+            'variables' => [
+                'name' => uniqid(),
+            ],
+            'operationName' => 'ArtistCreate',
         ], ['Content-Type' => 'application/json']);
 
         $response->assertStatus(200);

@@ -44,7 +44,7 @@ class GraphQLController extends Controller
 
         // Because the hydrator is used in mutation fields, set it in the Driver
         // container for easy access.
-        $driver->set(DoctrineObject::class, new DoctrineObject($entityManager));
+        $driver->set(DoctrineObject::class, new DoctrineObject($entityManager, false));
 
         $schema = new Schema([
             'query' => new ObjectType([
