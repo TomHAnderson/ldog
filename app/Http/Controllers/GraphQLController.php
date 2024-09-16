@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 
 use ApiSkeletons\Doctrine\ORM\GraphQL\Config;
 use ApiSkeletons\Doctrine\ORM\GraphQL\Driver;
+use ApiSkeletons\Laravel\ApiProblem\Facades\ApiProblem;
 use App\GraphQL\Mutation;
 use App\GraphQL\Query;
 use Doctrine\Laminas\Hydrator\DoctrineObject;
@@ -18,6 +19,7 @@ use GraphQL\Type\Schema;
 use GraphQL\Validator\DocumentValidator;
 use GraphQL\Validator\Rules\QueryComplexity;
 use Illuminate\Http\Request;
+use Throwable;
 
 use function array_map;
 use function config;
@@ -30,6 +32,10 @@ class GraphQLController extends Controller
         $query         = $request->json('query');
         $variables     = $request->json('variables') ?? [];
         $operationName = $request->json('operationName');
+
+        if (! $query) {
+            return ApiProblem::response('Query is required', 422);
+        }
 
         $context = [];
 
@@ -65,26 +71,30 @@ class GraphQLController extends Controller
         // Limit query complexity
         DocumentValidator::addRule(new QueryComplexity(350));
 
-        // Execute
-        $result = GraphQL::executeQuery(
-            schema: $schema,
-            source: (string) $query,
-            contextValue: $context,
-            variableValues: $variables,
-            operationName: $operationName,
-        )
-            ->setErrorFormatter(static function (Error $error): array {
-                $exception = $error->getPrevious() ?: $error;
+        try {
+            // Execute
+            $result = GraphQL::executeQuery(
+                schema: $schema,
+                source: (string) $query,
+                contextValue: $context,
+                variableValues: $variables,
+                operationName: $operationName,
+            )
+                ->setErrorFormatter(static function (Error $error): array {
+                    $exception = $error->getPrevious() ?: $error;
 
-                // Local development
-                if (config('app.debug')) {
-                    throw $exception;
-                }
+                    // Local development
+                    if (config('app.debug')) {
+                        throw $exception;
+                    }
 
-                return FormattedError::createFromException($error);
-            })
-            ->setErrorsHandler(static fn (array $errors, callable $formatter): array => array_map($formatter, $errors));
+                    return FormattedError::createFromException($error);
+                })
+                ->setErrorsHandler(static fn (array $errors, callable $formatter): array => array_map($formatter, $errors));
 
-        return $result->toArray();
+            return $result->toArray();
+        } catch (Throwable $e) {
+            return FormattedError::createFromException($e);
+        }
     }
 }
