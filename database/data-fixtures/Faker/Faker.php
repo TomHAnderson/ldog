@@ -125,10 +125,10 @@ final class Faker implements
             $hydrator->hydrate($row, $artist);
             $manager->persist($artist);
 
-            foreach ($artist->getPerformances() as $performance) {
+            foreach ($artist->performances as $performance) {
                 $manager->persist($performance);
 
-                foreach ($performance->getRecordings() as $recording) {
+                foreach ($performance->recordings as $recording) {
                     $manager->persist($recording);
                 }
             }
