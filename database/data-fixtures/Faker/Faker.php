@@ -126,9 +126,11 @@ final class Faker implements
             $manager->persist($artist);
 
             foreach ($artist->performances as $performance) {
+                $performance->artist = $artist;
                 $manager->persist($performance);
 
                 foreach ($performance->recordings as $recording) {
+                    $recording->performance = $performance;
                     $manager->persist($recording);
                 }
             }
