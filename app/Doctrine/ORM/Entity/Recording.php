@@ -15,17 +15,17 @@ use Doctrine\Common\Collections\Collection;
 class Recording
 {
     #[GraphQL\Field(description: 'Source')]
-    private string $source;
+    public string $source;
 
     #[GraphQL\Field(description: 'Primary key')]
-    private int $id;
+    public int $id;
 
     #[GraphQL\Association(description: 'Performance entity')]
-    private Performance $performance;
+    public Performance $performance;
 
     /** @var mixed[]> */
     #[GraphQL\Association(description: 'Users')]
-    private Collection $users;
+    public Collection $users;
 
     /**
      * Constructor
@@ -33,79 +33,5 @@ class Recording
     public function __construct()
     {
         $this->users = new ArrayCollection();
-    }
-
-    /**
-     * Set source.
-     */
-    public function setSource(string $source): Recording
-    {
-        $this->source = $source;
-
-        return $this;
-    }
-
-    /**
-     * Get source.
-     */
-    public function getSource(): string
-    {
-        return $this->source;
-    }
-
-    /**
-     * Get id.
-     */
-    public function getId(): int
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set performance.
-     */
-    public function setPerformance(Performance $performance): Recording
-    {
-        $this->performance = $performance;
-
-        return $this;
-    }
-
-    /**
-     * Get performance.
-     */
-    public function getPerformance(): Performance
-    {
-        return $this->performance;
-    }
-
-    /**
-     * Add user.
-     */
-    public function addUser(User $user): Recording
-    {
-        $this->users[] = $user;
-
-        return $this;
-    }
-
-    /**
-     * Remove user.
-     *
-     * @return bool TRUE if this collection contained the specified element, FALSE otherwise.
-     */
-    public function removeUser(User $user): bool
-    {
-        return $this->users->removeElement($user);
-    }
-
-    /**
-     * Get users.
-     *
-     * @return mixed[]
-     */
-    public function getUsers(): Collection
-    {
-        return $this->users;
     }
 }
