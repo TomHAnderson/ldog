@@ -4,11 +4,11 @@ FROM php:8.3-apache
 # Suppress warnings from apt about lack of Dialog
 ENV DEBIAN_FRONTEND noninteractive
 
-LABEL author="stayker.com" \
+LABEL author="apiskeletons.com" \
       org.label-schema.docker.dockerfile="/Dockerfile" \
       org.label-schema.name="PHP using Apache" \
       org.label-schema.url="https://apiskeletons.com/" \
-      org.label-schema.vcs-url="https://github.com/api-skeletons/laravel-doctrine-orm-graphql"
+      org.label-schema.vcs-url="https://github.com/api-skeletons/ldog"
 
 # Command line utilities
 RUN apt-get update
