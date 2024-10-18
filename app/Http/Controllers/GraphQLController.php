@@ -58,6 +58,7 @@ class GraphQLController extends Controller
                 'fields' => [
                     'artist' => Query\Artist\Entity::getDefinition($driver, $variables, $operationName),
                     'artists' => Query\Artist\Connection::getDefinition($driver, $variables, $operationName),
+                    'performances' => Query\Performance\Connection::getDefinition($driver, $variables, $operationName),
                 ],
             ]),
             'mutation' => new ObjectType([
