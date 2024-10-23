@@ -1,66 +1,39 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+    <img src="https://placehold.co/10x10/337ab7/337ab7.png" width="100%" height="15px">
+    <img src="https://raw.githubusercontent.com/api-skeletons/ldog/master/public/assets/logo.svg" height="450px">
 </p>
 
-## About Laravel
+LDOG Stack
+==========
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+[![Build Status](https://github.com/API-Skeletons/ldog/actions/workflows/ldog.yml/badge.svg)](https://github.com/API-Skeletons/ldog/actions/workflows/ldog.yml?query=branch%3Amain)
+[![PHP Version](https://img.shields.io/badge/PHP-8.3%2b-blue)](https://img.shields.io/badge/PHP-8.3%2b-blue)
+[![Total Downloads](https://poser.pugx.org/api-skeletons/ldog/downloads)](//packagist.org/packages/api-skeletons/ldog)
+[![Slack Channel](https://camo.githubusercontent.com/21134ce22db8dc96c8ffed33cbfe3912dd1a17cf81c747983fbcad9769ac6509/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f736c61636b2d6a6f696e2d6f72616e67652e737667)](https://apiskeletons.slack.com/archives/C06TEBW5P2A)
+[![License](https://poser.pugx.org/api-skeletons/ldog/license)](//packagist.org/packages/api-skeletons/ldog)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Laravel, Doctrine ORM, and GraphQL
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+This project is a starting point for using Laravel, Doctrine ORM, and GraphQL together.
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Home Page
+---------
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+https://ldog.apiskeletons.dev
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+Documentation
+-------------
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+* Laravel - https://laravel.com/docs/10.x
+* Laravel Doctrine Adapter - https://www.laraveldoctrine.org/
+* Doctrine ORM - https://www.doctrine-project.org/projects/doctrine-orm/en/2.10/index.html
+* GraphQL Type Driver for Doctrine ORM - https://doctrine-orm-graphql.apiskeletons.dev/en/latest/
+* GraphQL-php - https://webonyx.github.io/graphql-php/
+* API Key - https://github.com/API-Skeletons/laravel-doctrine-apikey
+* Passport - https://laravel.com/docs/10.x/passport
+* magidoc - https://magidoc.js.org/introduction/welcome
+* graphiql - https://github.com/graphql/graphiql/blob/main/packages/graphiql/README.md
+* migrations - https://laraveldoctrine.org/docs/1.8/migrations
+* data fixtures - https://github.com/API-Skeletons/laravel-doctrine-data-fixtures/blob/main/README.md
