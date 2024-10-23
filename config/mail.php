@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 return [
 
     /*
@@ -49,21 +51,11 @@ return [
             'local_domain' => env('MAIL_EHLO_DOMAIN', parse_url(env('APP_URL', 'http://localhost'), PHP_URL_HOST)),
         ],
 
-        'ses' => [
-            'transport' => 'ses',
-        ],
+        'ses' => ['transport' => 'ses'],
 
-        'postmark' => [
-            'transport' => 'postmark',
-            // 'message_stream_id' => env('POSTMARK_MESSAGE_STREAM_ID'),
-            // 'client' => [
-            //     'timeout' => 5,
-            // ],
-        ],
+        'postmark' => ['transport' => 'postmark'],
 
-        'resend' => [
-            'transport' => 'resend',
-        ],
+        'resend' => ['transport' => 'resend'],
 
         'sendmail' => [
             'transport' => 'sendmail',
@@ -75,9 +67,7 @@ return [
             'channel' => env('MAIL_LOG_CHANNEL'),
         ],
 
-        'array' => [
-            'transport' => 'array',
-        ],
+        'array' => ['transport' => 'array'],
 
         'failover' => [
             'transport' => 'failover',
