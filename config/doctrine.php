@@ -33,8 +33,8 @@ return [
         'default' => [
             'dev'           => env('APP_DEBUG', false),
             'connection'    => env('DB_CONNECTION', 'mysql'),
-            'meta'          => env('DOCTRINE_METADATA', 'xml'),
-            'paths'         => [__DIR__ . '/doctrine-orm-metadata'],
+            'meta'          => env('DOCTRINE_METADATA', 'attributes'),
+            'paths'         => [app_path('Doctrine/ORM/Entity')],
             'naming_strategy' => DefaultNamingStrategy::class,
             'repository'    => EntityRepository::class,
 
