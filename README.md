@@ -27,7 +27,7 @@ Documentation
 
 * Laravel - https://laravel.com/docs/11.x
 * Laravel Doctrine ORM - https://github.com/laravel-doctine/orm
-* Doctrine ORM - https://www.doctrine-project.org/projects/doctrine-orm/en/2.10/index.html
+* Doctrine ORM - https://www.doctrine-project.org/projects/doctrine-orm/en/latest/index.html
 * GraphQL Type Driver for Doctrine ORM - https://doctrine-orm-graphql.apiskeletons.dev/en/latest/
 * GraphQL-php - https://webonyx.github.io/graphql-php/
 * API Key - https://github.com/API-Skeletons/laravel-doctrine-apikey
