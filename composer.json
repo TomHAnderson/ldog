@@ -1,12 +1,12 @@
 {
-    "name": "laravel/laravel",
+    "name": "api-skeletons/ldog",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
+    "description": "The LDOG Stack: Laravel, Doctrine ORM & GraphQL",
+    "keywords": ["laravel", "doctrine", "orm", "graphql"],
     "license": "MIT",
     "require": {
         "php": "^8.2",
-        "api-skeletons/doctrine-orm-graphql": "^12.2",
+        "api-skeletons/doctrine-orm-graphql": "^12.3",
         "api-skeletons/laravel-doctrine-apikey": "^2.0",
         "api-skeletons/laravel-doctrine-data-fixtures": "^1.0",
         "laravel-doctrine/orm": "^3.0",
