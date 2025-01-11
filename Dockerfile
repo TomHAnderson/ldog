@@ -1,5 +1,5 @@
 # Build PHP/Apache image
-FROM php:8.3-apache
+FROM php:8.4-apache
 
 # Suppress warnings from apt about lack of Dialog
 ENV DEBIAN_FRONTEND noninteractive
