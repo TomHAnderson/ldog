@@ -7,6 +7,7 @@ export default {
     website: {
         template: 'carbon-multi-page',
         output: '../../public/docs',
+        staticAssets: 'assets',
         options: {
             siteRoot: `/docs`,
             appTitle: 'LDOG Stack',
