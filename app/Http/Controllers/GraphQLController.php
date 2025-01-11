@@ -11,6 +11,7 @@ use App\GraphQL\Mutation;
 use App\GraphQL\Query;
 use Doctrine\Laminas\Hydrator\DoctrineObject;
 use Doctrine\ORM\EntityManager;
+use GraphQL\Error\DebugFlag;
 use GraphQL\Error\Error;
 use GraphQL\Error\FormattedError;
 use GraphQL\GraphQL;
@@ -19,7 +20,6 @@ use GraphQL\Type\Schema;
 use GraphQL\Validator\DocumentValidator;
 use GraphQL\Validator\Rules\QueryComplexity;
 use Illuminate\Http\Request;
-use Throwable;
 
 use function array_map;
 use function config;
@@ -48,7 +48,7 @@ class GraphQLController extends Controller
             'useHydratorCache' => true,
         ]));
 
-        // Because the hydrator is used in mutation fields, set it in the Driver
+        // Because a hydrator is used in the mutation, set it in the Driver
         // container for easy access.
         $driver->set(DoctrineObject::class, new DoctrineObject($entityManager, false));
 
@@ -72,30 +72,34 @@ class GraphQLController extends Controller
         // Limit query complexity
         DocumentValidator::addRule(new QueryComplexity(350));
 
-        try {
-            // Execute
-            $result = GraphQL::executeQuery(
-                schema: $schema,
-                source: (string) $query,
-                contextValue: $context,
-                variableValues: $variables,
-                operationName: $operationName,
-            )
-                ->setErrorFormatter(static function (Error $error): array {
-                    $exception = $error->getPrevious() ?: $error;
+        // Disable introspection in production
+        /*
+         use GraphQL\Validator\Rules\DisableIntrospection;
 
-                    // Local development
-                    if (config('app.debug')) {
-                        throw $exception;
-                    }
-
-                    return FormattedError::createFromException($error);
-                })
-                ->setErrorsHandler(static fn (array $errors, callable $formatter): array => array_map($formatter, $errors));
-
-            return $result->toArray();
-        } catch (Throwable $e) {
-            return FormattedError::createFromException($e);
+        if (! config('app.debug')) {
+            $rule = new DisableIntrospection(DisableIntrospection::ENABLED);
+            DocumentValidator::addRule($rule);
         }
+        */
+
+        // Execute
+        $result = GraphQL::executeQuery(
+            schema: $schema,
+            source: (string) $query,
+            contextValue: $context,
+            variableValues: $variables,
+            operationName: $operationName,
+        )
+            ->setErrorFormatter(static function (Error $error): array {
+                return FormattedError::createFromException($error);
+            })
+            ->setErrorsHandler(static fn (array $errors, callable $formatter): array => array_map($formatter, $errors));
+
+        // Show debug output if under development; else none
+        $debugFlag = config('app.debug') ?
+            DebugFlag::INCLUDE_DEBUG_MESSAGE | DebugFlag::INCLUDE_TRACE
+            : DebugFlag::NONE;
+
+        return $result->toArray($debugFlag);
     }
 }
