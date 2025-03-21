@@ -6,7 +6,6 @@ namespace App\Http\Controllers;
 
 use ApiSkeletons\Doctrine\ORM\GraphQL\Config;
 use ApiSkeletons\Doctrine\ORM\GraphQL\Driver;
-use ApiSkeletons\Laravel\ApiProblem\Facades\ApiProblem;
 use App\GraphQL\Mutation;
 use App\GraphQL\Query;
 use Doctrine\Laminas\Hydrator\DoctrineObject;
@@ -21,6 +20,7 @@ use GraphQL\Validator\DocumentValidator;
 use GraphQL\Validator\Rules\QueryComplexity;
 use Illuminate\Http\Request;
 
+use function abort;
 use function array_map;
 use function config;
 
@@ -34,7 +34,7 @@ class GraphQLController extends Controller
         $operationName = $request->json('operationName');
 
         if (! $query) {
-            return ApiProblem::response('Query is required', 422);
+            abort(422, 'Missing query parameter');
         }
 
         $context = [];

@@ -1,24 +1,24 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Database\DataFixtures\Faker;
+namespace Database\Seeders;
 
 use App\Doctrine\ORM\Entity\Artist as ArtistEntity;
 use DateTime;
-use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Laminas\Hydrator\DoctrineObject;
-use Doctrine\Persistence\ObjectManager;
+use Doctrine\ORM\EntityManager;
 use Exception;
+use Illuminate\Database\Seeder;
 
-/**
- * DataFixtures MAY be used to "fake" data.
- * Sometimes unit tests are dependent on fake data.
- */
-final class Faker implements
-    FixtureInterface
+class FakerSeeder extends Seeder
 {
-    public function load(ObjectManager $manager): void
+    public function __construct(private EntityManager $entityManager)
+    {
+    }
+
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
     {
         $data = [
             [
@@ -108,10 +108,10 @@ final class Faker implements
          * Use the DoctrineObject hydrator to hydrate the entity.
          * This maintains a consistent pattern in all DataFixtures.
          */
-        $hydrator = new DoctrineObject($manager, false);
+        $hydrator = new DoctrineObject($this->entityManager, false);
 
         foreach ($data as $row) {
-            $artist = $manager
+            $artist = $this->entityManager
                 ->getRepository(ArtistEntity::class)
                 ->findOneBy(['name' => $row['name']]);
 
@@ -123,19 +123,19 @@ final class Faker implements
 
             // Magic?  No!  The hydrator understands the entity and its associations.
             $hydrator->hydrate($row, $artist);
-            $manager->persist($artist);
+            $this->entityManager->persist($artist);
 
             foreach ($artist->performances as $performance) {
                 $performance->artist = $artist;
-                $manager->persist($performance);
+                $this->entityManager->persist($performance);
 
                 foreach ($performance->recordings as $recording) {
                     $recording->performance = $performance;
-                    $manager->persist($recording);
+                    $this->entityManager->persist($recording);
                 }
             }
         }
 
-        $manager->flush();
+        $this->entityManager->flush();
     }
 }
