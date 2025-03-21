@@ -82,7 +82,7 @@ jobs:
           DB_PORT: ${{ job.services.mysql.ports['3306'] }}
 
       - name: Import Fixtures
-        run: php artisan doctrine:data-fixtures:import faker
+        run: php artisan db:seed --class=FakerSeeder
         env:
           DB_PORT: ${{ job.services.mysql.ports['3306'] }}
 
